@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Платформа для координации игровых альянсов с синхронизацией мессенджеров и автопереводом"/>
+  <meta name="keywords" content="игровой чат, альянс, Last Asylum, синхронизация, переводчик"/>
+  <title>Alliance Chat — Платформа для игровых сообществ</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Навигация -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-icon">⚔️</span>
+        <span class="logo-text">ALLIANCE CHAT</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#features">Возможности</a></li>
+        <li><a href="#demo">Демо</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+      <button class="btn btn-primary nav-cta" onclick="scrollToSection('contact')">Заказать демо</button>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- Герой-секция -->
+  <header class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="highlight">Единый центр связи</span><br/>
+          для игровых альянсов
+        </h1>
+        <p class="hero-subtitle">
+          Синхронизация Telegram • VK • Discord + Автоперевод + Резервный веб-чат
+        </p>
+        <p class="hero-description">
+          Когда мессенджеры недоступны — ваши игроки остаются на связи. 
+          Идеально для международных альянсов в онлайн-стратегиях.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-large" onclick="scrollToSection('demo')">🎮 Смотреть демо</button>
+          <button class="btn btn-secondary btn-large" onclick="scrollToSection('contact')">📩 Связаться с нами</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Игроков на альянс</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Языков перевода</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Альянсов в системе</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="mockup-container">
+          <div class="mockup-header">
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-message left">
+              <div class="mockup-avatar">A</div>
+              <div class="mockup-bubble">
+                <div class="mockup-nick">AlexRU</div>
+                <div class="mockup-text">Внимание! Атака через 30 минут</div>
+                <div class="mockup-time">14:32</div>
+              </div>
+            </div>
+            <div class="mockup-message right">
+              <div class="mockup-bubble">
+                <div class="mockup-nick">HansDE</div>
+                <div class="mockup-text">Verstanden! Ich bin bereit</div>
+                <div class="mockup-time">14:33</div>
+              </div>
+              <div class="mockup-avatar">H</div>
+            </div>
+            <div class="mockup-message left">
+              <div class="mockup-avatar">A</div>
+              <div class="mockup-bubble">
+                <div class="mockup-nick">AlexRU</div>
+                <div class="mockup-text">Понял! Я готов</div>
+                <div class="mockup-badge">🔄 Переведено</div>
+                <div class="mockup-time">14:33</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bg-effect"></div>
+  </header>
+
+  <!-- Проблемы -->
+  <section class="problems">
+    <div class="container">
+      <h2 class="section-title">С какими проблемами сталкиваются альянсы?</h2>
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon">🚫</div>
+          <h3>Блокировки мессенджеров</h3>
+          <p>Telegram, Discord недоступны в некоторых регионах. Игроки выпадают из координации.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🌍</div>
+          <h3>Языковой барьер</h3>
+          <p>Международные альянсы теряют эффективность из-за непонимания между игроками.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">📱</div>
+          <h3>Фрагментация связи</h3>
+          <p>Часть в Telegram, часть в VK, часть в Discord. Информация теряется.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🔐</div>
+          <h3>Отсутствие резерва</h3>
+          <p>При блокировке основного канала альянс остаётся без связи в критический момент.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Возможности -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Что мы предлагаем</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Синхронизация мессенджеров</h3>
+          <p>Сообщения автоматически дублируются между сайтом, Telegram, VK и Discord. Один пишет — все видят.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Автоперевод сообщений</h3>
+          <p>Каждый игрок видит сообщения на своём языке. Поддержка 10+ языков с сохранением оригинала.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Система альянсов</h3>
+          <p>Изолированные пространства для каждого альянса. Глава управляет участниками, модераторами, настройками.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📷</div>
+          <h3>Загрузка скриншотов</h3>
+          <p>Делитесь игровыми моментами напрямую в чате. Авто-сжатие, превью, хранение в облаке.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Панель управления</h3>
+          <p>Статистика активности, список участников, лог действий, экспорт данных для главы альянса.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Модерация и защита</h3>
+          <p>Бан-лист, удаление сообщений, защита от спама, двухфакторная аутентификация для глав.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Демо -->
+  <section id="demo" class="demo">
+    <div class="container">
+      <h2 class="section-title">Интерактивное демо</h2>
+      <p class="section-subtitle">Попробуйте прямо сейчас — отправьте сообщение в тестовый чат</p>
+      
+      <div class="demo-container">
+        <div class="demo-chat">
+          <div class="demo-chat-header">
+            <div class="demo-chat-title">🎮 Last Asylum — Тестовый альянс</div>
+            <div class="demo-chat-status">
+              <span class="status-dot connected"></span>
+              <span>Онлайн</span>
+            </div>
+          </div>
+          
+          <div class="demo-chat-messages" id="demoChatMessages">
+            <div class="message">
+              <div class="meta">
+                <span class="nickname">CommanderRU</span>
+                <span class="timestamp">14:20</span>
+                <span class="platform">[Telegram]</span>
+              </div>
+              <div class="content">Всем привет! Сбор через 1 час у координат 456,789</div>
+            </div>
+            <div class="message">
+              <div class="meta">
+                <span class="nickname">WarriorDE</span>
+                <span class="timestamp">14:22</span>
+                <span class="platform">[Website]</span>
+              </div>
+              <div class="content">Verstanden! Ich werde pünktlich sein</div>
+              <div class="translation-badge">🔄 Переведено на русский</div>
+              <div class="content translation">Понял! Буду вовремя</div>
+            </div>
+            <div class="message">
+              <div class="meta">
+                <span class="nickname">ScoutFR</span>
+                <span class="timestamp">14:25</span>
+                <span class="platform">[VK]</span>
+              </div>
+              <div class="content">J'ai vu des ennemis à l'est</div>
+              <div class="translation-badge">🔄 Переведено на русский</div>
+              <div class="content translation">Я видел врагов на востоке</div>
+            </div>
+          </div>
+          
+          <div class="demo-chat-input">
+            <input type="text" id="demoNickname" placeholder="Ваш ник" value="PlayerTest"/>
+            <input type="text" id="demoMessage" placeholder="Введите сообщение для демо..."/>
+            <button class="btn btn-primary" id="demoSendBtn" onclick="sendDemoMessage()">➤ Отправить</button>
+          </div>
+        </div>
+        
+        <div class="demo-info">
+          <h3>Как это работает:</h3>
+          <ol class="demo-steps">
+            <li>Игрок пишет сообщение на сайте</li>
+            <li>Сообщение сохраняется в базе данных</li>
+            <li>Автоматически отправляется в подключенные мессенджеры</li>
+            <li>Ответы из мессенджеров появляются на сайте</li>
+            <li>Иностранные сообщения переводятся автоматически</li>
+          </ol>
+          
+          <div class="demo-tech">
+            <h4>Технологии:</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">WebSocket</span>
+              <span class="tech-tag">Real-time DB</span>
+              <span class="tech-tag">Bot API</span>
+              <span class="tech-tag">Neural Translation</span>
+              <span class="tech-tag">Cloud Storage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Тарифы -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифные планы</h2>
+      <p class="section-subtitle">Начните бесплатно, масштабируйтесь по мере роста альянса</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Базовый</h3>
+            <div class="price">
+              <span class="currency">₽</span>
+              <span class="amount">0</span>
+              <span class="period">/мес</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✅ До 50 участников</li>
+            <li>✅ 1 канал синхронизации</li>
+            <li>✅ 1 ГБ хранения картинок</li>
+            <li>✅ История 30 дней</li>
+            <li>✅ 1000 переводов/мес</li>
+            <li>❌ Кастомный домен</li>
+            <li>❌ Приоритетная поддержка</li>
+          </ul>
+          <button class="btn btn-secondary btn-full" onclick="scrollToSection('contact')">Выбрать</button>
+        </div>
+        
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Популярный</div>
+          <div class="pricing-header">
+            <h3>Профи</h3>
+            <div class="price">
+              <span class="currency">₽</span>
+              <span class="amount">299</span>
+              <span class="period">/мес</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✅ До 200 участников</li>
+            <li>✅ 3 канала синхронизации</li>
+            <li>✅ 10 ГБ хранения картинок</li>
+            <li>✅ История 1 год</li>
+            <li>✅ 10 000 переводов/мес</li>
+            <li>❌ Кастомный домен</li>
+            <li>✅ Приоритетная поддержка</li>
+          </ul>
+          <button class="btn btn-primary btn-full" onclick="scrollToSection('contact')">Выбрать</button>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Бизнес</h3>
+            <div class="price">
+              <span class="currency">₽</span>
+              <span class="amount">999</span>
+              <span class="period">/мес</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>✅ Неограниченно участников</li>
+            <li>✅ Неограниченно каналов</li>
+            <li>✅ 50 ГБ хранения картинок</li>
+            <li>✅ История без ограничений</li>
+            <li>✅ Безлимитные переводы</li>
+            <li>✅ Кастомный домен</li>
+            <li>✅ Приоритетная поддержка</li>
+          </ul>
+          <button class="btn btn-secondary btn-full" onclick="scrollToSection('contact')">Выбрать</button>
+        </div>
+      </div>
+      
+      <div class="pricing-note">
+        <p>💡 <strong>Для крупных объединений:</strong> индивидуальные тарифы от 5 альянсов. Свяжитесь с нами для обсуждения.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Заинтересовались?</h2>
+      <p class="section-subtitle">Оставьте заявку — мы свяжемся для демонстрации и обсуждения условий</p>
+      
+      <div class="contact-grid">
+        <div class="contact-form-container">
+          <form class="contact-form" id="contactForm" onsubmit="submitContactForm(event)">
+            <div class="form-group">
+              <label for="name">Ваше имя *</label>
+              <input type="text" id="name" name="name" required placeholder="Иван Иванов"/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="ivan@example.com"/>
+            </div>
+            <div class="form-group">
+              <label for="alliance">Название альянса (если есть)</label>
+              <input type="text" id="alliance" name="alliance" placeholder="Last Asylum RU"/>
+            </div>
+            <div class="form-group">
+              <label for="players">Количество игроков</label>
+              <select id="players" name="players">
+                <option value="">Выберите...</option>
+                <option value="1-50">1-50</option>
+                <option value="51-200">51-200</option>
+                <option value="200+">200+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Комментарий</label>
+              <textarea id="message" name="message" rows="4" placeholder="Расскажите о ваших потребностях..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">📩 Отправить заявку</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <h3>Контакты</h3>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>contact@alliance-chat.io</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">💬</span>
+            <div>
+              <strong>Telegram</strong>
+              <p>@alliance_chat_support</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🌐</span>
+            <div>
+              <strong>Сайт</strong>
+              <p>alliance-chat.io</p>
+            </div>
+          </div>
+          
+          <div class="contact-cta">
+            <h4>Готовы начать?</h4>
+            <p>Первый альянс подключается бесплатно на 14 дней для тестирования всех функций.</p>
+            <button class="btn btn-secondary" onclick="scrollToSection('contact')">Заказать демо-доступ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">⚔️</span>
+            <span class="logo-text">ALLIANCE CHAT</span>
+          </div>
+          <p>Платформа для координации игровых сообществ</p>
+        </div>
+        <div class="footer-links">
+          <h4>Продукт</h4>
+          <ul>
+            <li><a href="#features">Возможности</a></li>
+            <li><a href="#pricing">Тарифы</a></li>
+            <li><a href="#demo">Демо</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Компания</h4>
+          <ul>
+            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Блог</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Правовая информация</h4>
+          <ul>
+            <li><a href="#">Политика конфиденциальности</a></li>
+            <li><a href="#">Условия использования</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Alliance Chat. Все права защищены.</p>
+        <p class="footer-disclaimer">Не связано официально с Last Asylum или другими игровыми студиями.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Уведомления -->
+  <div id="notification" class="notification">
+    <span id="notificationText"></span>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
